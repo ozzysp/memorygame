@@ -4,6 +4,7 @@ body {
     align-items: center;
     min-height: 100vh;
     background-color: #6a2244;
+    user-select: none;
 }
 
 .container {
@@ -21,6 +22,11 @@ body {
         #fdeff9 100%
     );
     padding: 40px 60px;
+    font-size: 1.5em;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: 600;
 }
 
 h2 {
@@ -37,5 +43,45 @@ h2 {
     background-color: #fff;
     border: none;
     font-family: 1.5em;
-    
+
+}
+
+.reset:focus {
+    color: #ec38bc;
+    background-color: #262829;
+}
+
+.game {
+    width: 430px;
+    height: 430px;
+    border: 2px solid yellow;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    transform-style: preserve-3d;
+    perspective:  500px;
+}
+
+.item {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    font-size: 3em;
+    transform: rotateY(180deg);
+    transition: 0.25s;
+}
+
+.item::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: #404040;
+    opacity: 0.85;
+    transition: 0.25s;
+    transform: rotateY(0deg);
+    backface-visibility: hidden;
 }
